@@ -1,0 +1,9 @@
+web-assets-path = "web/build"
+
+authentication-key = ""
+encryption-key = ""
+csrf-authentication-key = ""
+
+sock-name = "/tmp/hackdartmouth.sock"
+db-name = "hackdartmouth"
+allowed-origins = ["http://localhost:8080"]
