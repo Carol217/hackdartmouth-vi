@@ -55,7 +55,6 @@ $ go run scripts/secrets/generate_secrets.go
 7. Build the backend
 
 ```
-$ cd ..
 $ go build
 ```
 
