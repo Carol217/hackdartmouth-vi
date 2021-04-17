@@ -64,3 +64,8 @@ $ go build
 ```
 $ ./hackdartmouth-vi --dev
 ```
+
+## Notes
+- The initial setup for the frontend was done via `yarn create react-app`
+- The initial setup for the backend was done using [web-template](https://github.com/PGo-Projects/web-template) which helps to cut down
+  on the boilerplate needed to get a server up and running.
