@@ -37,14 +37,29 @@ $ cd web && yarn install
 $ yarn build
 ```
 
-5. Build the backend
+5. Navigate back to the project root
+
+```
+$ cd ..
+```
+
+6. Generate the secrets
+
+- Copy the 64 bytes secret for authentication-key in config.toml
+- Copy the 32 bytes secret for encryption-key and csrf-authentication-key in config.toml
+
+```
+$ go run scripts/secrets/generate_secrets.go
+```
+
+7. Build the backend
 
 ```
 $ cd ..
 $ go build
 ```
 
-6. Run the backend
+8. Run the backend
 
 ```
 $ ./hackdartmouth-vi --dev
