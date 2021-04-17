@@ -1,0 +1,121 @@
+.Analysis {
+    /* background-color: #D4EFE5; */
+    padding: 8vw;
+}
+
+.Analysis h1 {
+    font-size: 5vw;
+}
+
+.Analysis .top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2vw;
+}
+
+.Analysis .box {
+    border-radius: 39px;
+    height: 60%;
+    width: 35%;
+    position: absolute;
+    left: 8vw;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    background-color: #BFDFD0;
+    border-radius: 25px;
+}
+.time-button {
+    width:33%;
+    padding: 1vw;
+    text-align: center;
+}
+.time-button:focus {
+    background-color:#5EA880;
+    color: #fff;
+    outline:none;
+}
+input[type=radio] {
+    display: none;
+}
+.button1 {
+    border-right-style: solid;
+    border-right-width: revert;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+.button2 {
+    border-right-style: solid;
+    border-right-width: revert;
+}
+.button3 {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.box1 {
+    background-color: #F8FFFC;
+    z-index:1;
+    margin-top: 2vw;
+    display:flex;
+    justify-content: center;
+    vertical-align:center;
+}
+
+.box2 {
+    background-color: #83BD9E;
+    margin-top: 3vw;
+    margin-left: 1vw;
+
+}
+
+.bottom {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Carousel 
+https://www.npmjs.com/package/react-responsive-carousel
+*/
+.carousel-root {
+    max-width: 50%;
+    margin-top: 2vw;
+}
+.carousel-status {
+    display:none;
+}
+.carousel-open:checked + .carousel-item {
+    position: static;
+    opacity: 100;
+}
+.carousel-item {
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+    height:50vh;
+}
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3 {
+    display: block;
+}
+.carousel-indicators {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+    color: #2b6cb0;  /*Set to match the Tailwind colour you want the active one to be */
+}
