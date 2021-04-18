@@ -1,0 +1,32 @@
+{
+    "name": "Productivity Tracker",
+    "version": "1.0",
+    "description": "Track how productive you are",
+    "manifest_version": 2,
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "<all_urls>",
+        "https://productivity.pchancs.com/"
+    ],
+    "background": {
+        "persistent": true,
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*/*",
+                "http://*/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    }
+}
