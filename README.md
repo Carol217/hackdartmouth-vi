@@ -9,6 +9,7 @@ To be updated.
 - [Go](https://golang.org/)
 - [React](https://reactjs.org/)
 - [MongoDB](https://www.mongodb.com/)
+- [Chart.JS](https://www.chartjs.org/)
 
 # :balloon: Try It Out
 #### :warning: You must have `git`, `mongo`, and `go` installed.
