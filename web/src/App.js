@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import TaskList from './TaskList'
 import ProductivityDonutChart from './ProductivityDonutChart'
 import ProgressDonutChart from './ProgressDonutChart'
