@@ -49,9 +49,9 @@ const Task = ({checked, initialValue, shouldFocus}) => {
 // This is a list of tasks, takes an array of objects where each objects is composed of the following properties
 // - checked: whether the task is checked or not
 // - value: the text for the task
-const TaskList = ({tasks}) => {
+const TaskList = ({tasks, context}) => {
 
-    const [tasklist, setTasks] = useState(tasks)
+    const [tasklist, setTasks] = useState(tasks);
 
     const onEnterKey = (e) => {
         if (e.nativeEvent.code === "Enter") {
@@ -64,7 +64,7 @@ const TaskList = ({tasks}) => {
     return (
         <div id="tasklist" onKeyDown={(e) => onEnterKey(e)}>
             {tasklist.map((task, index) => 
-                <Task key={index} checked={task.checked} initialValue={task.value} shouldFocus={task.shouldFocus} />
+            <Task key={index} checked={task.checked} initialValue={task.value} shouldFocus={task.shouldFocus} />
             )}
         </div>
     )
