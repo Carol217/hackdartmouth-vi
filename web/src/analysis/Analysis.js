@@ -1,5 +1,7 @@
 import React from 'react';
-import BarChart from '../BarChart';
+import HoursBarChart from '../HoursBarChart';
+import DaysBarChart from '../DaysBarChart';
+import LineChart from "../LineChart";
 import "../../node_modules/react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import './analysis.css';
@@ -24,13 +26,13 @@ function Analysis() {
                 </div>     
                 <Carousel>
                     <div>
-                    <BarChart context={BarContext}/>
+                    <HoursBarChart context={BarContext}/>
                     </div>
                     <div>
-                    <BarChart context={BarContext}/>
+                    <DaysBarChart context={BarContext}/>
                     </div>
                     <div>
-                    <BarChart context={BarContext}/>
+                    <LineChart />
                     </div>
                 </Carousel>       
             </div>

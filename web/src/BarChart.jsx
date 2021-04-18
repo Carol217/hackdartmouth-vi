@@ -12,38 +12,13 @@ import Chartjs from 'chart.js';
 //      hoverBackgroundColor: list of hex values
 //      data: values of each label.
 
-const BarChart = ({context}) => {
+const BarChart = ({state, context}) => {
   const chartContainer = useRef(null);
   const [chartInstance, setChartInstance] = useState(null);
   const contextValues = useContext(context);
   
   contextValues.chartInstance = chartInstance
-  const state = {
-    id: "barChart", 
-    labels: ["3am", "4am", "5am", "6pm", "7pm", "8am"],
-    datasets: [
-      {
-        label: 'Productivity',
-        backgroundColor: [
-          '#FFFFFA',
-          '#FFF3C9',
-          '#FFFFFA',
-          '#FFF3C9',
-          '#FFF3C9',
-          '#FFFFFA'
-        ],
-        hoverBackgroundColor: [
-          '#D1DAD8',
-          '#C19700',
-          '#D1DAD8',
-          '#C19700',
-          '#C19700',
-          '#D1DAD8'
-        ],
-        data: [50, 80, 40, 72, 70, 45]
-      }
-    ]
-  };
+
 
   const chartConfig = {
     type: 'bar',
