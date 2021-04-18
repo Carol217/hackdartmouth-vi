@@ -8,9 +8,10 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/PGo-Projects/output"
 	"github.com/Carol217/hackdartmouth-vi/internal/config"
 	"github.com/Carol217/hackdartmouth-vi/internal/security"
+	"github.com/Carol217/hackdartmouth-vi/internal/views"
+	"github.com/PGo-Projects/output"
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
 	"github.com/gorilla/csrf"
@@ -42,6 +43,7 @@ func MustRun(cmd *cobra.Command, arg []string) {
 
 	security.MustSetup(mux)
 	mux.MethodFunc(http.MethodGet, "/*", serveStaticOrIndex)
+	views.RegisterAPIEndpoints(mux)
 
 	if config.DevRun {
 		output.Println("Attempting to run on localhost:8080...", output.BLUE)
