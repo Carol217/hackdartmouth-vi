@@ -1,14 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
 // Individual task is rendered here
-const Task = ({checked, initialValue, shouldFocus}) => {
+const Task = ({checked, initialValue, shouldFocus, context}) => {
     const [tabbed, setTabbed] = useState(false);
     const [done, setDone] = useState(checked);
     const [value, setValue] = useState(initialValue);
     const [del, setDel] = useState(false);
+    const contextValues = useContext(context);
 
     const handleCheckTask = (e) => {
         setDone(e.target.checked);
+        if (done) {
+            contextValues.checked += 1;
+            contextValues.unchecked -= 1;
+        } else {
+            contextValues.checked -= 1;
+            contextValues.unchecked += 1;
+        }
     }
 
     const handleKeyDown = (e) => {
@@ -18,6 +26,11 @@ const Task = ({checked, initialValue, shouldFocus}) => {
         } else if (e.nativeEvent.code === "Backspace") {
             if (value === "") {
                 setDel(true)
+                if (done) {
+                    contextValues.checked -= 1;
+                } else {
+                    contextValues.unchecked -= 1;
+                }
             }
         }
     }
@@ -52,19 +65,21 @@ const Task = ({checked, initialValue, shouldFocus}) => {
 const TaskList = ({tasks, context}) => {
 
     const [tasklist, setTasks] = useState(tasks);
+    const contextValues = useContext(context);
 
     const onEnterKey = (e) => {
         if (e.nativeEvent.code === "Enter") {
             var copy = Object.assign([], tasklist);
             copy.push({checked: false, value: "", shouldFocus: true});
             setTasks(copy);
+            contextValues.checked += 1;
         }
     }
 
     return (
         <div id="tasklist" onKeyDown={(e) => onEnterKey(e)}>
             {tasklist.map((task, index) => 
-            <Task key={index} checked={task.checked} initialValue={task.value} shouldFocus={task.shouldFocus} />
+            <Task key={index} checked={task.checked} initialValue={task.value} shouldFocus={task.shouldFocus} context={context}/>
             )}
         </div>
     )
