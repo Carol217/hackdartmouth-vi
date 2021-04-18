@@ -4,8 +4,11 @@ import { useContext } from 'react';
 const ProductivityDonutChart = ({context}) => {
     
     const contextValues = useContext(context);
-    const data = [contextValues.timeProductive, contextValues.timeUnproductive];
 
+    const updateDataset = (newData) => {
+      contextValues.chartInstance.data.datasets[0].data = newData;
+      contextValues.chartInstance.update();
+    };
 
     const productivityState = {
         id: "productivityChart", 
@@ -15,14 +18,14 @@ const ProductivityDonutChart = ({context}) => {
           {
             label: 'Productivity',
             backgroundColor: [
-              '#FFF0BB',
-              '#AED3CB'
+              '#71CE7A',
+              '#FFFFFA'
             ],
             hoverBackgroundColor: [
-              '#E4C000',
-              '#AED3CB'
+              '#83BDB0',
+              '#D1DAD8'
             ],
-            data: data
+            data: [contextValues.timeProductive, contextValues.timeUnproductive]
           }
         ]
       };
