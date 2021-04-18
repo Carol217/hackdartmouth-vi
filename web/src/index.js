@@ -10,9 +10,9 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
     <Navbar />
+    <ToDoList />
     <App />
     <Analysis />
-    <ToDoList />
   </React.StrictMode>,
   document.getElementById('root')
 );
