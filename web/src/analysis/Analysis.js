@@ -1,4 +1,4 @@
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import "../../node_modules/react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import './analysis.css';
 
@@ -8,9 +8,9 @@ function Analysis() {
         <div className="top">
             <h1>My Productivity</h1>    
             <div className="button-container">
-                <button type="button" class="time-button button1">Last 24 hrs</button>
-                <button type="button" class="time-button button2">Last 7 days</button>
-                <button type="button" class="time-button button3">Last 30 days</button>
+                <button type="button" className="time-button button1">Last 24 hrs</button>
+                <button type="button" className="time-button button2">Last 7 days</button>
+                <button type="button" className="time-button button3">Last 30 days</button>
             </div>
         </div>
         <div className="bottom">

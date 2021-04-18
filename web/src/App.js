@@ -18,7 +18,7 @@ function App() {
       <ProgressDonutChart context={ProgressContext}/>
       
       <ProductivityDonutChart context={ProductivityContext}/>
-    </div>
+      </div>
   );
 }
 
