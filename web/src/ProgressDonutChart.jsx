@@ -4,7 +4,6 @@ import { useContext } from 'react';
 const ProgressDonutChart = ({context}) => {
 
     const contextValues = useContext(context);
-    const data = [contextValues.checked, contextValues.unchecked];
 
     const progressState = {
         id: "progressChart", 
@@ -21,13 +20,20 @@ const ProgressDonutChart = ({context}) => {
               '#D1DAD8',
               '#AED3CB'
             ],
-            data: data
+            data: [contextValues.checked, contextValues.unchecked]
           }
         ]
     };
 
+    const onClick = (e) => {
+        console.log(progressState);
+        progressState.datasets.data = [contextValues.checked, contextValues.unchecked]
+    }
+
     return (
-        <DonutChart state={progressState}/>
+        <div onClick={(e) => onClick(e)}>
+            <DonutChart state={progressState} context={context} />
+        </div>
     )
 }
 

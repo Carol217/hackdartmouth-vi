@@ -28,7 +28,7 @@ const ProductivityDonutChart = ({context}) => {
       };
 
     return (
-      <DonutChart state={productivityState}/>
+      <DonutChart state={productivityState} context={context}/>
     )
 }
 

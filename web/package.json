@@ -7,8 +7,11 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "add": "^2.0.6",
+    "chart.js": "^2.9.4",
     "postcss-loader": "^3.0.0",
     "react": "^17.0.2",
+    "react-chartjs-2": "^2.11.1",
     "react-dom": "^17.0.2",
     "react-responsive-carousel": "^3.2.18",
     "react-router": "^5.2.0",
@@ -43,7 +46,6 @@
   "devDependencies": {
     "@tailwindcss/postcss7-compat": "^2.1.0",
     "autoprefixer": "^9.8.6",
-    "babel-loader": "^8.1.0",
     "postcss": "^7.0.35",
     "prettier": "^2.2.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.0"
