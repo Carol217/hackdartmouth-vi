@@ -1,0 +1,20 @@
+{
+  "name": "productivity-tracker",
+  "version": "1.0.0",
+  "description": "Track your productivity",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^4.0.3",
+    "@tailwindcss/typography": "^0.4.0",
+    "autoprefixer": "^10.2.5",
+    "cssnano": "^5.0.1",
+    "postcss": "^8.2.10",
+    "tailwindcss": "^2.1.1"
+  },
+  "scripts": {
+    "debug": "postcss css/input.css --verbose --config debug --output css/style.css",
+    "build": "postcss css/input.css --verbose --config build --output css/style.css"
+  }
+}

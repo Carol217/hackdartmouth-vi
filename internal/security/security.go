@@ -4,9 +4,9 @@ import (
 	"context"
 	"encoding/base64"
 
-	"github.com/PGo-Projects/output"
 	"github.com/Carol217/hackdartmouth-vi/internal/config"
 	"github.com/Carol217/hackdartmouth-vi/internal/securitydb"
+	"github.com/PGo-Projects/output"
 	"github.com/PGo-Projects/webauth"
 	"github.com/go-chi/chi"
 	"github.com/spf13/viper"
@@ -37,5 +37,10 @@ func MustSetup(mux *chi.Mux) {
 	allowedOrigins := viper.GetStringSlice(config.AllowedOrigins)
 	webauth.SetupCORS(mux, false, allowedOrigins)
 	webauth.SetupCSRF(mux, csrfAuthenticationKey, config.ProdRun)
+	
+	webauth.RegisterRoute = "/api/register"
+	webauth.LoginRoute = "/api/login"
+	webauth.LogoutRotue = "/api/logout"
+	webauth.IsLoggedInRoute = "/api/is_logged_in"
 	webauth.RegisterEndPoints(mux)
 }

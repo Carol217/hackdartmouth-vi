@@ -7,7 +7,8 @@ import { Carousel } from 'react-responsive-carousel';
 import './analysis.css';
 
 function Analysis() {
-    const BarContext = React.createContext({toggleOption: 0, chartInstance:null})
+    const BarContext = React.createContext({toggleOption: 0, chartInstance:null});
+
     return (
     <div id="productivity">
         <div className="Analysis">
@@ -22,7 +23,14 @@ function Analysis() {
             <div className="bottom">
                 <div className="box box2"></div>
                 <div className="box box1">
-                Fill in
+                    <div className="sites">
+                        facebook.com <br />youtube.com<br /><span className="emphasis">pinterest.com</span><br />
+                        <span className="emphasis">gmail.com</span>
+                    </div>
+                    <div className="times">
+                        2hrs 3min <br />1hr 15min<br /><span className="emphasis">5min</span><br />
+                        <span className="emphasis">3hrs 27min</span>
+                    </div>
                 </div>     
                 <Carousel>
                     <div>

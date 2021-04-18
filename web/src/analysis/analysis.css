@@ -1,7 +1,7 @@
 .Analysis {
     padding: 8vw;
     padding-top:3vw;
-    padding-bottom: 2vw;
+    padding-bottom: 6vw;
 }
 
 .Analysis h1 {
@@ -20,6 +20,10 @@
     width: 35%;
     position: absolute;
     left: 8vw;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 3vw;
+    font-size: 2vw;
 }
 
 .button-container {
