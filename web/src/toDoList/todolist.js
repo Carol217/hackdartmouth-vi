@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import './todolist.css';
+import TaskList from '../TaskList'
+import ProductivityDonutChart from '../ProductivityDonutChart'
+import ProgressDonutChart from '../ProgressDonutChart'
 
 class todolist extends Component {
     constructor(props) {
@@ -7,9 +10,13 @@ class todolist extends Component {
         let date = new Date();
         this.state = {
             hour: date.getHours().toLocaleString(),
-            minutes: date.getMinutes().toLocaleString()
+            minutes: date.getMinutes().toLocaleString(),
+            tasks: [{checked: false, value: "Click here to add to-dos!", shouldFocus: false}],
+            ProgressContext: React.createContext({checked: 0, unchecked: 1, chartInstance: null}),
+            ProductivityContext: React.createContext({timeProductive: 1, timeUnproductive: 1, chartInstance:null})
       }; 
     }
+    
     componentDidMount() {
         setInterval(() => {
         let date = new Date();
@@ -25,6 +32,7 @@ class todolist extends Component {
       }
   
     render() {
+
         let message;
         if (5 <= this.state.hour && this.state.hour < 12) {
             message = "Good Morning";
@@ -41,10 +49,10 @@ class todolist extends Component {
                     <h3>{message}</h3>
                     <div className="piecharts">
                         <div className="piechart">
-                            1
+                            <ProductivityDonutChart context={this.state.ProductivityContext}/>
                         </div>
                         <div className="piechart">
-                            2
+                            <ProgressDonutChart context={this.state.ProgressContext}/>
                         </div>
                     </div>
                 </div>
@@ -52,7 +60,7 @@ class todolist extends Component {
                     <h2>What would you like to get done <span className="emphasis">today</span>?</h2>
                     <div className="box-list boxlist2"></div>
                     <div className="box-list boxlist1">
-
+                        <TaskList tasks={this.state.tasks} context={this.state.ProgressContext} />
                     </div>
                 </div>
             </div>

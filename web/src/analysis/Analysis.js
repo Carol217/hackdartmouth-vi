@@ -1,9 +1,12 @@
+import React from 'react';
+import BarChart from '../BarChart';
 import "../../node_modules/react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import './analysis.css';
 
 function Analysis() {
-  return (
+    const BarContext = React.createContext({toggleOption: 0, chartInstance:null})
+    return (
     <div className="Analysis">
         <div className="top">
             <h1>My Productivity</h1>    
@@ -16,17 +19,17 @@ function Analysis() {
         <div className="bottom">
             <div className="box box2"></div>
             <div className="box box1">
-                Fill in
+             Fill in
             </div>     
             <Carousel>
                 <div>
-                    <img src="https://i.pinimg.com/originals/cc/42/2c/cc422cc47f70d0a822ca45d4526f583a.jpg" alt="hours" />
+                <BarChart context={BarContext}/>
                 </div>
                 <div>
-                    <img src="https://i.pinimg.com/originals/cc/42/2c/cc422cc47f70d0a822ca45d4526f583a.jpg" alt="days"/>
+                <BarChart context={BarContext}/>
                 </div>
                 <div>
-                    <img src="https://i.pinimg.com/originals/cc/42/2c/cc422cc47f70d0a822ca45d4526f583a.jpg" alt="month"/> 
+                <BarChart context={BarContext}/>
                 </div>
             </Carousel>       
         </div>
