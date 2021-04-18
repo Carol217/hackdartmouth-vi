@@ -1,0 +1,66 @@
+#todolist {
+    padding-top: 8vw;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 7vw;
+}
+
+.left-list {
+    margin-right: 10vw;
+}
+
+.time-header {
+    font-size: 10vw;
+}
+
+.left-list h3 {
+    text-align: center;
+    font-size: 2vw;
+}
+
+.piecharts {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.piechart {
+    width: 50%;
+    height: auto;
+}
+
+.right-list {
+    width: 50%;
+}
+
+.right-list h2 {
+    font-size: 2.5vw;
+    margin-top: 4vw;
+}
+
+.emphasis {
+    color: gold;
+}
+
+.box-list {
+    border-radius: 39px;
+    height: 30%;
+    width: 45%;
+    position: absolute;
+    right: 8vw;
+}
+
+.boxlist1 {
+    background-color: #F8FFFC;
+    z-index:1;
+    margin-top: 2vw;
+    display:flex;
+    justify-content: center;
+    vertical-align:center;
+}
+
+.boxlist2 {
+    background-color: #83BD9E;
+    margin-top: 3vw;
+    margin-left: 1vw;
+    right: 7vw;
+}
