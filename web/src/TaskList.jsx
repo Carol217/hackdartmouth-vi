@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 
+
 // Individual task is rendered here
 const Task = ({checked, initialValue, shouldFocus, context}) => {
     const [tabbed, setTabbed] = useState(false);
@@ -8,15 +9,21 @@ const Task = ({checked, initialValue, shouldFocus, context}) => {
     const [del, setDel] = useState(false);
     const contextValues = useContext(context);
 
+    const updateDataset = (newData) => {
+        contextValues.chartInstance.data.datasets[0].data = newData;
+        contextValues.chartInstance.update();
+      };
+
     const handleCheckTask = (e) => {
-        setDone(e.target.checked);
-        if (done) {
+        if (!done) {
             contextValues.checked += 1;
             contextValues.unchecked -= 1;
         } else {
             contextValues.checked -= 1;
             contextValues.unchecked += 1;
         }
+        updateDataset([contextValues.checked, contextValues.unchecked])
+        setDone(e.target.checked);
     }
 
     const handleKeyDown = (e) => {
@@ -32,6 +39,7 @@ const Task = ({checked, initialValue, shouldFocus, context}) => {
                     contextValues.unchecked -= 1;
                 }
             }
+            updateDataset([contextValues.checked, contextValues.unchecked])
         }
     }
 
@@ -63,21 +71,27 @@ const Task = ({checked, initialValue, shouldFocus, context}) => {
 // - checked: whether the task is checked or not
 // - value: the text for the task
 const TaskList = ({tasks, context}) => {
-
+    
     const [tasklist, setTasks] = useState(tasks);
     const contextValues = useContext(context);
+
+    const updateDataset = (newData) => {
+        contextValues.chartInstance.data.datasets[0].data = newData;
+        contextValues.chartInstance.update();
+      };
 
     const onEnterKey = (e) => {
         if (e.nativeEvent.code === "Enter") {
             var copy = Object.assign([], tasklist);
             copy.push({checked: false, value: "", shouldFocus: true});
             setTasks(copy);
-            contextValues.checked += 1;
+            contextValues.unchecked += 1;
         }
+        updateDataset([contextValues.checked, contextValues.unchecked])
     }
 
     return (
-        <div id="tasklist" onKeyDown={(e) => onEnterKey(e)}>
+        <div id="tasklist" style={{'paddingTop': '8vw'}} onKeyDown={(e) => onEnterKey(e)}>
             {tasklist.map((task, index) => 
             <Task key={index} checked={task.checked} initialValue={task.value} shouldFocus={task.shouldFocus} context={context}/>
             )}

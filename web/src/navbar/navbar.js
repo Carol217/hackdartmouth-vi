@@ -4,7 +4,7 @@ import './navbar.css';
 // class NavbarPage extends Component {
 function navbar() {
     return (
-        
+        <header>
         <nav id="top-nav">
             <div className="center-nav-items">
                 LOGO
@@ -14,6 +14,7 @@ function navbar() {
             <span className="spacer"></span>
             <span className="nav-item"><i className="fas fa-lg fa-user-cog"></i></span>
         </nav>
+        </header>
     )
 }
 
