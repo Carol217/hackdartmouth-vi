@@ -3,12 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Analysis from './analysis/Analysis';
+import ToDoList from './toDoList/todolist';
+import Navbar from './navbar/navbar';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
+    <Navbar />
     <App />
     <Analysis />
+    <ToDoList />
   </React.StrictMode>,
   document.getElementById('root')
 );
