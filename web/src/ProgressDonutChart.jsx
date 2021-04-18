@@ -13,12 +13,13 @@ const ProgressDonutChart = ({context}) => {
           {
             label: 'Progress',
             backgroundColor: [
-              '#F8FFFC',
-              '#AED3CB'
+                '#FFF3C9',  
+                '#FFFFFA'
+              
             ],
             hoverBackgroundColor: [
-              '#D1DAD8',
-              '#AED3CB'
+                '#D29538',
+                '#D1DAD8'
             ],
             data: [contextValues.checked, contextValues.unchecked]
           }
