@@ -6,11 +6,14 @@
 }
 
 .left-list {
-    margin-right: 10vw;
+    width: 100%;
+    justify-content: center;
 }
 
 .time-header {
     font-size: 10vw;
+    right: 2vw;
+    margin-left: 15vw;
 }
 
 .left-list h3 {
@@ -21,29 +24,35 @@
 .piecharts {
     display: flex;
     justify-content: space-evenly;
+    width: 80%;
+    margin-right: 0;
+    margin-left: 10%;
 }
 
 .piechart {
-    width: 50%;
+    width: 100%;
     height: auto;
+    margin-top: 3vw;
 }
 
 .right-list {
-    width: 50%;
+    width: 100%;
 }
 
 .right-list h2 {
     font-size: 2.5vw;
     margin-top: 4vw;
+    position: absolute;
+    right: 9vw;
 }
 
 .emphasis {
-    color: gold;
+    color: #C1A336;
 }
 
 .box-list {
     border-radius: 39px;
-    height: 30%;
+    height: 50%;
     width: 45%;
     position: absolute;
     right: 8vw;
@@ -52,15 +61,19 @@
 .boxlist1 {
     background-color: #F8FFFC;
     z-index:1;
-    margin-top: 2vw;
+    margin-top: 9vw;
     display:flex;
-    justify-content: center;
     vertical-align:center;
 }
 
 .boxlist2 {
     background-color: #83BD9E;
-    margin-top: 3vw;
+    margin-top: 10vw;
     margin-left: 1vw;
     right: 7vw;
+}
+
+#tasklist {
+    padding-top:2vw;
+    padding-left:2vw;
 }

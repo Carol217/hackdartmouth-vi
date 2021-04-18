@@ -1,5 +1,7 @@
 .Analysis {
     padding: 8vw;
+    padding-top:3vw;
+    padding-bottom: 2vw;
 }
 
 .Analysis h1 {
@@ -14,7 +16,7 @@
 
 .Analysis .box {
     border-radius: 39px;
-    height: 60%;
+    height: 50%;
     width: 35%;
     position: absolute;
     left: 8vw;

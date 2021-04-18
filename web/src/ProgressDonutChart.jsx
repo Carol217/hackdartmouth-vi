@@ -13,7 +13,7 @@ const ProgressDonutChart = ({context}) => {
           {
             label: 'Progress',
             backgroundColor: [
-                '#FFF3C9',  
+                '#EFD887', //'#FFF3C9',  
                 '#FFFFFA'
               
             ],

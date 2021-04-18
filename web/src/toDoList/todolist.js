@@ -48,10 +48,10 @@ class todolist extends Component {
                     <h1 className="time-header">{this.state.hour + ":" + this.state.minutes}</h1>
                     <h3>{message}</h3>
                     <div className="piecharts">
-                        <div className="piechart">
+                        <div className="piechart ">
                             <ProductivityDonutChart context={this.state.ProductivityContext}/>
                         </div>
-                        <div className="piechart">
+                        <div className="piechart ">
                             <ProgressDonutChart context={this.state.ProgressContext}/>
                         </div>
                     </div>

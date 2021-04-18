@@ -94,7 +94,7 @@ const TaskList = ({tasks, context}) => {
     }
 
     return (
-        <div id="tasklist" style={{'paddingTop': '8vw'}} onKeyDown={(e) => onEnterKey(e)}>
+        <div id="tasklist" onKeyDown={(e) => onEnterKey(e)}>
             {tasklist.map((task, index) => 
             <Task key={index} checked={task.checked} initialValue={task.value} shouldFocus={task.shouldFocus} context={context}/>
             )}

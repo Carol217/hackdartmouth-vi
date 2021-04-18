@@ -4,8 +4,9 @@ function navbar() {
     return (
         <header>
             <nav id="top-nav">
+                <img src="/static/Productifylogobigger.png" alt="logo" className="logo"></img>
                 <div className="center-nav-items">
-                    <img src="./assets/temp.png" alt="logo"></img>
+                    
                     <a href="#todolist">TO-DO LIST</a>
                     <a href="#productivity">PRODUCTIVITY</a>
                 </div>
