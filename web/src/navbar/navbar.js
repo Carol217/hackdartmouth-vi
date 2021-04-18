@@ -4,7 +4,7 @@ function navbar() {
     return (
         <header>
             <nav id="top-nav">
-                <img src="/static/Productifylogobigger.png" alt="logo" className="logo"></img>
+                <img src="https://i.ibb.co/rwkLh6Z/Productifylogobigger.png" alt="logo" className="logo"></img>
                 <div className="center-nav-items">
                     
                     <a href="#todolist">TO-DO LIST</a>
