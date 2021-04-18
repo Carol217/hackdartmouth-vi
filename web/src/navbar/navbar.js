@@ -5,7 +5,7 @@ function navbar() {
         <header>
             <nav id="top-nav">
                 <div className="center-nav-items">
-                    LOGO
+                    <img src="./assets/temp.png" alt="logo"></img>
                     <a href="#todolist">TO-DO LIST</a>
                     <a href="#productivity">PRODUCTIVITY</a>
                 </div>
