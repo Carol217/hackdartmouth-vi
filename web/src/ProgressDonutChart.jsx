@@ -26,13 +26,8 @@ const ProgressDonutChart = ({context}) => {
         ]
     };
 
-    const onClick = (e) => {
-        console.log(progressState);
-        progressState.datasets.data = [contextValues.checked, contextValues.unchecked]
-    }
-
     return (
-        <div onClick={(e) => onClick(e)}>
+        <div>
             <DonutChart state={progressState} context={context} />
         </div>
     )

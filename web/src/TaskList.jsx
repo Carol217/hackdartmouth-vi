@@ -38,8 +38,9 @@ const Task = ({checked, initialValue, shouldFocus, context}) => {
                 } else {
                     contextValues.unchecked -= 1;
                 }
+                updateDataset([contextValues.checked, contextValues.unchecked])
             }
-            updateDataset([contextValues.checked, contextValues.unchecked])
+            
         }
     }
 
@@ -86,8 +87,10 @@ const TaskList = ({tasks, context}) => {
             copy.push({checked: false, value: "", shouldFocus: true});
             setTasks(copy);
             contextValues.unchecked += 1;
+            console.log(contextValues)
+            updateDataset([contextValues.checked, contextValues.unchecked])
         }
-        updateDataset([contextValues.checked, contextValues.unchecked])
+        
     }
 
     return (

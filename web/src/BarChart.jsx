@@ -20,7 +20,7 @@ const BarChart = ({context}) => {
   contextValues.chartInstance = chartInstance
   const state = {
     id: "barChart", 
-    labels: ["9am", "10am", "11am", "12pm", "1pm"],
+    labels: ["3am", "4am", "5am", "6pm", "7pm", "8am"],
     datasets: [
       {
         label: 'Productivity',
@@ -28,15 +28,19 @@ const BarChart = ({context}) => {
           '#FFFFFA',
           '#FFF3C9',
           '#FFFFFA',
-          '#FFF3C9'
+          '#FFF3C9',
+          '#FFF3C9',
+          '#FFFFFA'
         ],
         hoverBackgroundColor: [
           '#D1DAD8',
           '#C19700',
           '#D1DAD8',
-          '#C19700'
+          '#C19700',
+          '#C19700',
+          '#D1DAD8'
         ],
-        data: [50, 80, 40, 72]
+        data: [50, 80, 40, 72, 70, 45]
       }
     ]
   };
